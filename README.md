@@ -11,9 +11,10 @@ Should works with every Gnome and KDE environment.
 * From sources:
 
 ```
+sudo apt-get install python-pip python-gi
 git clone https://github.com/Antoine38660/worldclock-indicator.git
 cd worldclock-indicator
-pip install
+pip install -r requirements.txt
 nohup ./worldclock-indicator &
 ```
 
