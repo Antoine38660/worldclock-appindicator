@@ -2,16 +2,17 @@
 
 Ubuntu application indicator that displays a clock with a choosed timezone.
 
-Works with Unity (tested)
+Works with Unity (tested).
+
 Should works with every Gnome and KDE environment.
 
 ## Installation
 
 * From sources:
 
-Clone this repo, then:
-
 ```
+git clone https://github.com/Antoine38660/worldclock-indicator.git
+cd worldclock-indicator
 pip install
 nohup ./worldclock-indicator &
 ```
