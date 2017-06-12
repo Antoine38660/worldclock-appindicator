@@ -39,7 +39,14 @@ def set_current_time(*args):
         tz_config = f.read()
     tz = pytz.timezone(tz_config.rstrip())
     now = datetime.datetime.now(tz)
-    args[0].set_label(str(now.hour) + ':' + str(now.minute), '00:00')
+    hours = str(now.hour)
+    minutes = str(now.minute)
+    # Add a 0 if the number of hours/minutes have only one digit
+    if now.hour < 10:
+        hours = "0" + hour
+    if now.minute < 10:
+        minutes = "0"+minutes
+    args[0].set_label(hours + ':' + minutes, '00:00')
     return True
     
 
