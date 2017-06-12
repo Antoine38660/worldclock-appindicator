@@ -41,12 +41,18 @@ def set_current_time(*args):
     now = datetime.datetime.now(tz)
     hours = str(now.hour)
     minutes = str(now.minute)
+    seconds = str(now.second)
+    
     # Add a 0 if the number of hours/minutes have only one digit
     if now.hour < 10:
         hours = "0" + hour
     if now.minute < 10:
         minutes = "0"+minutes
-    args[0].set_label(hours + ':' + minutes, '00:00')
+    if now.second < 10:
+        seconds = "0"+seconds
+        
+    # Set the current hour as label
+    args[0].set_label(hours + ':' + minutes + ':' + seconds, '00:00:00')
     return True
     
 
