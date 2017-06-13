@@ -47,7 +47,8 @@ def set_current_time(*args):
     
     
     if config['twelve_hour']:
-        hours = str(now.hour/12)
+        if now.hour > 12:
+            hours = str(now.hour-12)
         period = 'AM' if now.hour%12 == 0 else 'PM'
     
     # Add a 0 if the number of hours/minutes have only one digit
